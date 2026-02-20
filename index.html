@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>KOSTYA STRIKE: School 15</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <section id="menu" class="panel">
+      <h1>KOSTYA STRIKE</h1>
+      <p class="subtitle">Главный герой: Костя. Операция в школе №15.</p>
+
+      <div class="menu-grid">
+        <label>
+          Имя игрока
+          <input id="playerName" type="text" value="Костя" maxlength="20">
+        </label>
+
+        <label>
+          Режим
+          <select id="modeSelect">
+            <option value="duel">Локальный мультиплеер 1v1</option>
+            <option value="bots">Обычный режим 5v5 (боты)</option>
+          </select>
+        </label>
+
+        <label>
+          Карта
+          <select id="mapSelect">
+            <option value="school15">1. Школа номер 15</option>
+            <option value="tv4">2. Телевизионная 4</option>
+            <option value="dust2">3. Dust2</option>
+          </select>
+        </label>
+
+        <label>
+          Оружие
+          <select id="weaponSelect"></select>
+        </label>
+      </div>
+
+      <div class="menu-actions">
+        <button id="startBtn">Начать бой</button>
+        <button id="backBtn" disabled>В меню</button>
+      </div>
+
+      <div class="info">
+        <p>Управление (ПК): WASD, мышь, R перезарядка, Q смена оружия, Space рывок.</p>
+        <p>Управление (телефон): левый стик - движение, правый - прицел, FIRE/R/WEAPON кнопки.</p>
+      </div>
+    </section>
+
+    <section id="hud" class="hud hidden">
+      <div class="top-bar">
+        <div id="scoreLine">CT 0 : 0 T</div>
+        <div id="timerLine">03:00</div>
+        <div id="mapLine">Карта: -</div>
+      </div>
+      <div class="bottom-bar">
+        <div id="playerLine">Костя</div>
+        <div id="weaponLine">Оружие: -</div>
+        <div id="ammoLine">Патроны: -</div>
+        <div id="hpLine">HP: 100</div>
+      </div>
+    </section>
+
+    <canvas id="gameCanvas" width="1280" height="720"></canvas>
+
+    <section id="mobileControls" class="hidden">
+      <div class="joystick-zone left-zone">
+        <div id="moveStick" class="joystick"><div class="stick-knob"></div></div>
+      </div>
+      <div class="joystick-zone right-zone">
+        <div id="aimStick" class="joystick"><div class="stick-knob"></div></div>
+      </div>
+      <div class="mobile-buttons">
+        <button id="fireBtn">FIRE</button>
+        <button id="reloadBtn">R</button>
+        <button id="nextWeaponBtn">WEAPON</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
